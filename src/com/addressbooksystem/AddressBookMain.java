@@ -1,4 +1,7 @@
 package com.addressbooksystem;
+
+import java.util.Scanner;
+
 /*
  * ---------------------------Address Book System---------------------------
  * 
@@ -10,6 +13,28 @@ public class AddressBookMain {
 	public static void main(String[] args) {
 		System.out.println("---------------------------Welcome to Address Book System Program---------------------------");
 		AddressBook addressBook = new AddressBook();
-		addressBook.addContacts();
+		Scanner scanner = new Scanner(System.in);
+		//addressBook.addContacts();
+		
+		while(true) {
+			System.out.println("1.Add Contacts \n2.Shows Contacts \n3.Edit Contacts");
+			System.out.print("Enter Your Choice:-> ");
+			int choice = scanner.nextInt();
+			switch (choice) {
+			case 1:
+				addressBook.addContacts();
+				break;
+				
+			case 2:
+				addressBook.showsContacts();
+				break;
+				
+			case 3:
+				addressBook.editContacts();
+				break;
+			}
+			
+		}
+		
 	}
 }
