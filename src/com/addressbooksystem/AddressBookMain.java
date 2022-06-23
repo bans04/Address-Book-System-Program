@@ -1,10 +1,15 @@
 package com.addressbooksystem;
-
+/*
+ * ---------------------------Address Book System---------------------------
+ * 
+ * @Dnyandeo Bansode
+ * 
+ * */
 public class AddressBookMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		System.out.println("---------------------------Welcome to Address Book System Program---------------------------");
+		AddressBook addressBook = new AddressBook();
+		addressBook.addContacts();
 	}
-
 }
