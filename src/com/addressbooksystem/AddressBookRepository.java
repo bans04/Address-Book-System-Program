@@ -12,18 +12,29 @@ public class AddressBookRepository {
 	
 	public Contacts getContacts(String fName) {
 		Contacts contact1 = null;
-		for(Contacts contact : contactsList) {
-			if(contact.fName.equals(fName)) {
-				contact1 = contact;
+		if(contactsList.isEmpty()) {
+			System.out.println("Contacts List is Empty..|");
+		}else {
+			//Contacts contact1 = null;
+			for(Contacts contact : contactsList) {
+				if(contact.fName.equals(fName)) {
+					contact1 = contact;
+				}else {
+					System.out.println("Contact not found..|");
+				}
 			}
 		}
-		System.out.println(contact1);
-		return contact1;
+			//System.out.println(contact1);
+			return contact1;
 	}
 	
 	public void showsContacts() {
 		for(Contacts contact : contactsList) {
 			System.out.println(contact);
 		}
+	}
+	
+	public void removeContact(Contacts contact) {
+		contactsList.remove(contact);
 	}
 }

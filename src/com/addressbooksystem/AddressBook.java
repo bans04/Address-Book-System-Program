@@ -75,4 +75,11 @@ public class AddressBook {
 		
 		addressBookRepository.addContacts(contact);
 	}
+	
+	public void deletContacts() {
+		System.out.print("Enter contacts first name that U want to Delet:-> ");
+		String fName = sc.next();
+		Contacts contact = addressBookRepository.getContacts(fName);
+		addressBookRepository.removeContact(contact);
+	}
 }
