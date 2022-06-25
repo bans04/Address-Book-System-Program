@@ -3,7 +3,7 @@ package com.addressbooksystem;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class AddressBook {
+public class AddressBookManagement {
 	Contacts contacts = new Contacts();
 	//ArrayList<Contacts> contactsList = new ArrayList<>();
 	AddressBookRepository addressBookRepository = new AddressBookRepository();

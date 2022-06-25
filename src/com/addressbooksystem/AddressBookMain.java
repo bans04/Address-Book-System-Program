@@ -12,7 +12,7 @@ public class AddressBookMain {
 
 	public static void main(String[] args) {
 		System.out.println("---------------------------Welcome to Address Book System Program---------------------------");
-		AddressBook addressBook = new AddressBook();
+		AddressBookManagement addressBook = new AddressBookManagement();
 		Scanner scanner = new Scanner(System.in);
 		//addressBook.addContacts();
 		
@@ -37,7 +37,6 @@ public class AddressBookMain {
 				addressBook.deletContacts();
 				break;
 			}
-			
 		}
 		
 	}
