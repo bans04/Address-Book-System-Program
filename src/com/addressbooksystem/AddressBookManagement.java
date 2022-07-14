@@ -1,5 +1,4 @@
 package com.addressbooksystem;
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,8 +9,7 @@ public class AddressBookManagement {
 	Scanner sc = new Scanner(System.in);
 	
 	public void addContacts() {
-		 System.out.println("Enter the contacts details..| ");
-		// Scanner sc = new Scanner(System.in);
+		 System.out.println("Enter the contacts details:->  ");
 		 
 	     System.out.print("Enter First Name:-> ");
 	     contacts.fName = sc.nextLine();
@@ -38,10 +36,14 @@ public class AddressBookManagement {
 	     contacts.eMail = sc.next();
 	     
 	     addressBookRepository.addContacts(contacts);
+	     System.out.println("Contacts add successfully..|");
+	     System.out.println();
 	}
 	
 	public void showsContacts() {
+		System.out.println("Contacts in Address Book are:-> ");
 		addressBookRepository.showsContacts();
+		System.out.println();
 	}
 	
 	public void editContacts() {
@@ -50,7 +52,7 @@ public class AddressBookManagement {
 		Contacts contact = addressBookRepository.getContacts(fName);
 		
 		System.out.print("Enter new First Name:-> ");
-		contacts.fName = sc.next();
+		contact.fName = sc.next();
 		
 		System.out.print("Enter new Last Name:-> ");
 		contact.lName = sc.next();
@@ -73,7 +75,8 @@ public class AddressBookManagement {
 		System.out.print("Enter new E-Mail:-> ");
 		contact.eMail = sc.next();
 		
-		addressBookRepository.addContacts(contact);
+		System.out.println("Contacts Edited Successfully..|");
+		System.out.println();
 	}
 	
 	public void deletContacts() {
@@ -81,5 +84,7 @@ public class AddressBookManagement {
 		String fName = sc.next();
 		Contacts contact = addressBookRepository.getContacts(fName);
 		addressBookRepository.removeContact(contact);
+		System.out.println("Contacts Deleted Successfully..|");
+		System.out.println();
 	}
 }

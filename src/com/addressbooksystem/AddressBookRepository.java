@@ -15,7 +15,6 @@ public class AddressBookRepository {
 		if(contactsList.isEmpty()) {
 			System.out.println("Contacts List is Empty..|");
 		}else {
-			//Contacts contact1 = null;
 			for(Contacts contact : contactsList) {
 				if(contact.fName.equals(fName)) {
 					contact1 = contact;
@@ -24,17 +23,24 @@ public class AddressBookRepository {
 				}
 			}
 		}
-			//System.out.println(contact1);
 			return contact1;
 	}
 	
 	public void showsContacts() {
-		for(Contacts contact : contactsList) {
-			System.out.println(contact);
+		if(contactsList.isEmpty()) {
+			System.out.println("Address Book is Empty..|");
+		}else {
+			for(Contacts contact : contactsList) {
+				System.out.println(contact);
+			}
 		}
 	}
 	
 	public void removeContact(Contacts contact) {
+		if(contactsList.isEmpty()) {
+			System.out.println("Address Book is Empty..|");
+		}else {
 		contactsList.remove(contact);
+		}
 	}
 }
