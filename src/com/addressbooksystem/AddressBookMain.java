@@ -12,6 +12,7 @@ import java.util.Scanner;
  * Uc5:-> Ability to add multiple person to Address Book
  * Uc6:-> Refactor to add multiple Address Book to the System. Each Address Book has a unique Name
  * Uc7:-> Ability to ensure there is no Duplicate Entry of the same Person in a particular Address Book
+ * Uc8:-> Ability to search Person in a City or State across the multiple AddressBook
  * 
  * @Dnyandeo Bansode
  * 
@@ -35,7 +36,7 @@ public class AddressBookMain {
 		addressBookSystem.put(addressBookNameAsKey, addressBookNameValue);
 		
 		while(true) {
-			System.out.println("1.Add Contacts \n2.Shows Contacts \n3.Edit Contacts \n4.Delet Contacts");
+			System.out.println("1.Add Contacts \n2.Shows Contacts \n3.Edit Contacts \n4.Delet Contacts \n5.Search Person in city \n6.Serach Person in state");
 			System.out.print("Enter Your Choice:-> ");
 			int choice = scanner.nextInt();
 			switch (choice) {
@@ -53,6 +54,14 @@ public class AddressBookMain {
 				
 			case 4:
 				addressBook.deletContacts();
+				break;
+				
+			case 5:
+				addressBook.searchPersonInCity();
+				break;
+				
+			case 6:
+				addressBook.searchPersonInState();
 				break;
 			}
 		}

@@ -3,12 +3,13 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class AddressBookManagement {
-	Contacts contacts = new Contacts();
+	//Contacts contacts;
 	//ArrayList<Contacts> contactsList = new ArrayList<>();
 	AddressBookRepository addressBookRepository = new AddressBookRepository();
 	Scanner sc = new Scanner(System.in);
 	
 	public void addContacts() {
+		Contacts contacts = new Contacts();
 		 System.out.println("Enter the contacts details..| ");
 	     System.out.print("Enter First Name:-> ");
 	     String fName = sc.next();
@@ -54,7 +55,7 @@ public class AddressBookManagement {
 		Contacts contact = addressBookRepository.getContacts(fName);
 		
 		System.out.print("Enter new First Name:-> ");
-		contacts.fName = sc.next();
+		contact.fName = sc.next();
 		
 		System.out.print("Enter new Last Name:-> ");
 		contact.lName = sc.next();
@@ -85,5 +86,17 @@ public class AddressBookManagement {
 		String fName = sc.next();
 		Contacts contact = addressBookRepository.getContacts(fName);
 		addressBookRepository.removeContact(contact);
+	}
+	
+	public void searchPersonInCity() {
+		System.out.print("Enter city name in which you want to find person:-> ");
+		String city = sc.next();
+		addressBookRepository.getPerson(city);
+	}
+	
+	public void searchPersonInState() {
+		System.out.print("Enter state name in which you want to find person:-> ");
+		String state = sc.next();
+		addressBookRepository.getPersonInState(state);
 	}
 }

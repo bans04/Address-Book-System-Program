@@ -41,6 +41,7 @@ public class AddressBookRepository {
 			System.out.println("Address Book is Empty..|");
 		}else {
 		contactsList.remove(contact);
+		System.out.println(contact + " removed successfully..|");
 		}
 	}
 	
@@ -48,9 +49,34 @@ public class AddressBookRepository {
 		for (Contacts contacts : contactsList) {
 			if(contacts.fName.equals(fName)) {
 				System.out.println("Contact allready present in contacts..|");
+				System.out.println();
 				return true;
 			}
 		}
 		return false;
+	}
+	
+	public void getPerson(String city) {
+		System.out.println("Persons in " + city + " city:-> ");
+		for (Contacts contacts : contactsList) {
+			if(contacts.city.equals(city)) {
+				System.out.print(contacts.fName + ", ");
+			}else {
+				System.out.println();
+				System.out.println("No one person in " + city);
+			}
+		}System.out.println();
+	}
+	
+	public void getPersonInState(String state) {
+		System.out.println("Persons in " + state + " state:-> ");
+		for (Contacts contacts : contactsList) {
+			if(contacts.state.equals(state)) {
+				System.out.print(contacts.state + ", ");
+			}else {
+				System.out.println();
+				System.out.println("No one person in " + state);
+			}
+		}System.out.println();
 	}
 }
