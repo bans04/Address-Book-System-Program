@@ -11,6 +11,7 @@ import java.util.Scanner;
  * Uc4:-> Ability to delete a person using person's name
  * Uc5:-> Ability to add multiple person to Address Book
  * Uc6:-> Refactor to add multiple Address Book to the System. Each Address Book has a unique Name
+ * Uc7:-> Ability to ensure there is no Duplicate Entry of the same Person in a particular Address Book
  * 
  * @Dnyandeo Bansode
  * 

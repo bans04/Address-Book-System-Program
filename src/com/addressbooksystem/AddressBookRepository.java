@@ -43,4 +43,14 @@ public class AddressBookRepository {
 		contactsList.remove(contact);
 		}
 	}
+	
+	public boolean checkContacts(String fName) {
+		for (Contacts contacts : contactsList) {
+			if(contacts.fName.equals(fName)) {
+				System.out.println("Contact allready present in contacts..|");
+				return true;
+			}
+		}
+		return false;
+	}
 }

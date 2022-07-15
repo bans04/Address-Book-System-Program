@@ -9,41 +9,43 @@ public class AddressBookManagement {
 	Scanner sc = new Scanner(System.in);
 	
 	public void addContacts() {
-		 System.out.println("Enter the contacts details:->  ");
-		 
+		 System.out.println("Enter the contacts details..| ");
 	     System.out.print("Enter First Name:-> ");
-	     contacts.fName = sc.nextLine();
-
-	     System.out.print("Enter Last name:-> ");
-	     contacts.lName= sc.next();
-	        
-	     System.out.print("Enter Address:-> ");
-	     contacts.address = sc.next();
-
-	     System.out.print("Enter City name:-> ");
-	     contacts.city = sc.next();
-
-	     System.out.print("Enter State name:-> ");
-	     contacts.state = sc.next();
-
-	     System.out.print("Enter pin number:-> ");
-	     contacts.zip = sc.nextLong();
-
-	     System.out.print("Enter Phone No:-> ");
-	     contacts.phoneNo = sc.nextLong();
-
-	     System.out.print("Enter Email ID:-> ");
-	     contacts.eMail = sc.next();
+	     String fName = sc.next();
+	     boolean isPresent = addressBookRepository.checkContacts(fName);
 	     
-	     addressBookRepository.addContacts(contacts);
-	     System.out.println("Contacts add successfully..|");
-	     System.out.println();
+	     if(isPresent != true) {
+	    	 contacts.fName = fName;
+	
+		     System.out.print("Enter Last name:-> ");
+		     contacts.lName= sc.next();
+		        
+		     System.out.print("Enter Address:-> ");
+		     contacts.address = sc.next();
+	
+		     System.out.print("Enter City name:-> ");
+		     contacts.city = sc.next();
+	
+		     System.out.print("Enter State name:-> ");
+		     contacts.state = sc.next();
+	
+		     System.out.print("Enter pin number:-> ");
+		     contacts.zip = sc.nextLong();
+	
+		     System.out.print("Enter Phone No:-> ");
+		     contacts.phoneNo = sc.nextLong();
+	
+		     System.out.print("Enter Email ID:-> ");
+		     contacts.eMail = sc.next();
+		     
+		     addressBookRepository.addContacts(contacts);
+		     System.out.println("Contact add successfully..|");
+		     System.out.println();
+	     }
 	}
 	
 	public void showsContacts() {
-		System.out.println("Contacts in Address Book are:-> ");
 		addressBookRepository.showsContacts();
-		System.out.println();
 	}
 	
 	public void editContacts() {
@@ -52,7 +54,7 @@ public class AddressBookManagement {
 		Contacts contact = addressBookRepository.getContacts(fName);
 		
 		System.out.print("Enter new First Name:-> ");
-		contact.fName = sc.next();
+		contacts.fName = sc.next();
 		
 		System.out.print("Enter new Last Name:-> ");
 		contact.lName = sc.next();
@@ -75,8 +77,7 @@ public class AddressBookManagement {
 		System.out.print("Enter new E-Mail:-> ");
 		contact.eMail = sc.next();
 		
-		System.out.println("Contacts Edited Successfully..|");
-		System.out.println();
+		addressBookRepository.addContacts(contact);
 	}
 	
 	public void deletContacts() {
@@ -84,7 +85,5 @@ public class AddressBookManagement {
 		String fName = sc.next();
 		Contacts contact = addressBookRepository.getContacts(fName);
 		addressBookRepository.removeContact(contact);
-		System.out.println("Contacts Deleted Successfully..|");
-		System.out.println();
 	}
 }
