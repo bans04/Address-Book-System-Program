@@ -36,7 +36,9 @@ public class AddressBookMain {
 		addressBookSystem.put(addressBookNameAsKey, addressBookNameValue);
 		
 		while(true) {
-			System.out.println("1.Add Contacts \n2.Shows Contacts \n3.Edit Contacts \n4.Delet Contacts \n5.Search Person in city \n6.Serach Person in state");
+			System.out.println("1.Add contacts \n2.Shows contacts \n3.Edit contacts \n4.Delet contacts "
+								+ "\n5.Search Person in city \n6.Serach Person in state \n7.View Person by city"
+								+ "\n.8View Person by state");
 			System.out.print("Enter Your Choice:-> ");
 			int choice = scanner.nextInt();
 			switch (choice) {
@@ -62,6 +64,14 @@ public class AddressBookMain {
 				
 			case 6:
 				addressBook.searchPersonInState();
+				break;
+				
+			case 7:
+				addressBook.viewPersonByCity();
+				break;
+				
+			case 8:
+				addressBook.viewPersonByState();
 				break;
 			}
 		}

@@ -99,4 +99,12 @@ public class AddressBookManagement {
 		String state = sc.next();
 		addressBookRepository.getPersonInState(state);
 	}
+	
+	public void viewPersonByCity() {
+		addressBookRepository.getPersonByCity();
+	}
+	
+	public void viewPersonByState() {
+		addressBookRepository.getPersonByState();
+	}
 }

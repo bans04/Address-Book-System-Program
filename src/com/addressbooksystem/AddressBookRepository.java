@@ -79,4 +79,20 @@ public class AddressBookRepository {
 			}
 		}System.out.println();
 	}
+	
+	public void getPersonByCity() {
+		System.out.println("Person in Address Book by City wise:-> ");
+		for (Contacts contacts : contactsList) {
+			System.out.println(contacts.city + ": " + contacts.fName);
+		}
+		System.out.println();
+	}
+	
+	public void getPersonByState() {
+		System.out.println("Person in Address Book by state wise:-> ");
+		for (Contacts contacts : contactsList) {
+			System.out.println(contacts.state + ": " + contacts.fName);
+		}
+		System.out.println();
+	}
 }
